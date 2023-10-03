@@ -16,16 +16,19 @@ const timer = (deadline) => {
     }
 
     const updateClock = () => {
-        let getTime = getTimeRemaining()
-        timerHours.textContent = getTime.hours
-        timerMinutes.textContent = getTime.minutes
-        timerSeconds.textContent = getTime.seconds
-
-        if (getTime.timeRemaining > 0) {
-            setTimeout(updateClock, 1000)
+        const {timeRemaining, hours, minutes, seconds} = getTimeRemaining()
+        if (timeRemaining > 0) {
+            timerHours.textContent = hours < 10 ? `0${hours}` : hours
+            timerMinutes.textContent = minutes < 10 ? `0${minutes}` : minutes
+            timerSeconds.textContent = seconds < 10 ? `0${seconds}` : seconds
+        } else {
+            clearInterval(updateClockInterval)
         }
+        
+
     }
-    updateClock()
+    
+    const updateClockInterval = setInterval(updateClock, 1000)
 }
 
 export default timer
