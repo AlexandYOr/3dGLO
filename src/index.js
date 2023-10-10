@@ -12,4 +12,14 @@ menu()
 modal()
 validation()
 tabs()
-slider(2000)
+
+const portfolioSliderClasses = {
+    sliderBlockClass: '.portfolio-content',
+    slideClass: '.portfolio-item',
+    dotsBlockClass:'.portfolio-dots',
+    activeSlideClass:'portfolio-item-active',
+    buttonClass: '.portfolio-btn'
+}
+
+
+slider(2000, portfolioSliderClasses)
