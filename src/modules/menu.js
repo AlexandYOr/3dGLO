@@ -14,9 +14,7 @@ const menu = () => {
             handleMenu()
         } else if (e.target.matches('menu>ul>li>a')) {
             handleMenu()        
-        } else if (!e.target.closest('menu')) {
-            handleMenu()
-        }
+        } 
     }) 
 }
 
