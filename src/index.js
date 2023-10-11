@@ -7,13 +7,16 @@ import validation from "./modules/validation.js"
 import tabs from "./modules/tabs.js"
 import slider from "./modules/slider.js"
 import calc from "./modules/calc.js"
+import scroll from "./modules/scroll.js"
 
 timer('05 october 2023')
 menu()
+scroll()
 modal()
 validation()
 tabs()
 calc(100)
+
 const portfolioSliderClasses = {
     sliderBlockClass: '.portfolio-content',
     slideClass: '.portfolio-item',

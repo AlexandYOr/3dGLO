@@ -19,7 +19,6 @@ const slider = (timeInterval, classes) => {
     if (!slides.length) return
 
     const dots = Array.from(slides).map((_, index) => createDot(index === 0))
-    console.log(dots)
     const dotsBlock = document.querySelector(dotsBlockClass)
     dotsBlock.append(...dots)
     let currentSlide = 0
