@@ -1,3 +1,5 @@
+import {animate} from './helper.js'
+
 const calc = (price = 100) => {
     const calcBlock = document.querySelector('.calc-block')
     const calcType = document.querySelector('.calc-type')
@@ -6,16 +8,25 @@ const calc = (price = 100) => {
     const calcDay = document.querySelector('.calc-day')
     
     const changeTotalValue = (prevTotal = 0, newTotal = 0) => {
-        let tempValue = +prevTotal
-        const animationInterval = setInterval(() => {
-            if (tempValue >= newTotal) {
-                clearInterval(animationInterval)
-            } 
-                tempValue = tempValue + 18 > newTotal ? newTotal : tempValue + 18
-                total.textContent = tempValue
+        // let tempValue = +prevTotal
+        // const animationInterval = setInterval(() => {
+        //     if (tempValue >= newTotal) {
+        //         clearInterval(animationInterval)
+        //     } 
+        //         tempValue = tempValue + 18 > newTotal ? newTotal : tempValue + 18
+        //         total.textContent = tempValue
             
             
-        }, 20)
+        // }, 20)
+        animate({
+            duration: 1500,
+            timing(timeFraction) {
+              return timeFraction;
+            },
+            draw(progress) {
+                total.textContent = Math.floor(newTotal * progress)
+            }
+          }); 
 
     }
 
