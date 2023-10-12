@@ -24,7 +24,10 @@ const calc = (price = 100) => {
               return timeFraction;
             },
             draw(progress) {
-                total.textContent = Math.floor(newTotal * progress)
+                let tempValue = +prevTotal
+                tempValue = +prevTotal + Math.floor(newTotal * progress) > newTotal ? newTotal : +prevTotal + Math.floor(newTotal * progress)
+                console.log(tempValue)
+                total.textContent = tempValue
             }
           }); 
 
