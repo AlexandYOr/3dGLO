@@ -29,13 +29,13 @@ const validation = () => {
 
     phoneInput.forEach((item) => {
       item.addEventListener("input", (e) => {
-        e.target.value = e.target.value.replace(/[^()-\d]/g, "");
+        e.target.value = e.target.value.replace(/[^+()-\d]/g, "");
       });
     });
 
     messageInput.forEach((item) => {
       item.addEventListener("input", (e) => {
-        e.target.value = e.target.value.replace(/[^а-я -]/gi, "");
+        e.target.value = e.target.value.replace(/[^а-яА-ЯёЁ0-9\s.,!?;:-]+/g, "");
       });
     });
     

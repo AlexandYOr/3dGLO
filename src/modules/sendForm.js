@@ -8,6 +8,21 @@ const sendForm = ({ formId, someElem = [] }) => {
 
     const validate = (list) => {
         let success = true
+        list.forEach((elem) => {
+            if (elem.name === 'user_phone') {
+                success = /^[\d()+-]+$/g.test(elem.value)
+                console.log(success)
+            }
+            
+            if (elem.name === 'user_name') {
+                success = /[а-я -]/gi.test(elem.value)
+                console.log(success)
+            }
+            if (elem.name === 'user_message') {
+                success = /[а-яА-ЯёЁ0-9\s.,;:!?]+$/gi.test(elem.value)
+                console.log(success)
+            }
+        })
         return success
     }
 
