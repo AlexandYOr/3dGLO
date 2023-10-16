@@ -8,6 +8,7 @@ import tabs from "./modules/tabs.js"
 import slider from "./modules/slider.js"
 import calc from "./modules/calc.js"
 import scroll from "./modules/scroll.js"
+import sendForm from "./modules/sendForm.js"
 
 timer('05 october 2023')
 menu()
@@ -16,6 +17,15 @@ modal()
 validation()
 tabs()
 calc(100)
+sendForm({
+    formId: 'form1', 
+    someElem: [
+        {
+            type: 'block',
+            id: 'total'
+        }
+    ],
+})
 
 const portfolioSliderClasses = {
     sliderBlockClass: '.portfolio-content',
